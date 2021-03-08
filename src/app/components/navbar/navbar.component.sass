@@ -1,0 +1,92 @@
+@import "../.././app.component"
+
+.navbar-wrapper
+    position: sticky
+    top: 0
+    left: 0
+    z-index: 3
+
+    height: 6rem
+    line-height: 6rem
+
+    background: $whiteColor
+    box-shadow: -1px 3px 3px -1px rgba(0,0,0,0.05)
+    -webkit-box-shadow: -1px 3px 3px -1px rgba(0,0,0,0.05)
+    -moz-box-shadow: -1px 3px 3px -1px rgba(0,0,0,0.05)
+
+    .navbar-container
+        @extend .custom-container
+        @extend .centered-layout
+        @include FlexBox(space-between)
+
+        .site-logo-wrapper
+            display: block
+
+            .site-logo
+                width: 10rem
+
+        .menubar-icon
+            cursor: pointer
+            display: none
+
+            @media (max-width: $tablets)
+                display: block
+
+            &.toggle-active
+                .bar
+                    &:first-child
+                        display: none
+
+                    &:nth-child(2)
+                        transform: rotate(45deg)
+
+                    &:last-child
+                        transform: translateY(-0.55rem) rotate(-50deg)
+
+            .bar
+                content: ""
+                width: 2rem
+                height: .2rem
+                background: $darkGrayColor
+                margin-bottom: .5rem
+                transition: .3s all linear
+
+        .navbar-wrapper
+            @include FlexBox()
+
+            list-style: none
+            position: relative
+
+            @media (max-width: $tablets)
+                @include FlexBox(flex-start, flex-start)
+
+                flex-direction: column
+                position: absolute
+                top: 6rem
+                left: -100%
+                width: 100%
+                height: 100vh
+                background: $blackColor
+                transition: .3s all linear
+
+                &.menu-active
+                    left: 0%
+
+            .navbar-item
+                .navbar-item-link
+                    text-decoration: none
+                    color: $darkGrayColor
+                    font-size: $h4
+                    text-transform: uppercase
+                    padding: 1rem 2rem
+                    transition: .3s all linear
+
+                    &:hover
+                        color: $orangeColor
+
+                    &:last-child
+                        padding-right: unset
+
+                    @media (max-width: $tablets)
+                        color: $whiteColor
+                        padding: .3rem 1.5rem

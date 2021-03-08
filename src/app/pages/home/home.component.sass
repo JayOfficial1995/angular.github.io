@@ -1,0 +1,88 @@
+@import "../../app.component"
+
+.site-banner
+    @include FlexBox( )
+
+    background: url("/assets/images/banner-image.jpg") no-repeat
+    background-position: center
+    background-size: cover
+    width: 100%
+    height: 40rem
+    color: $grayColor
+    text-align: center
+
+    .banner-details
+        .banner-title
+            font-weight: $regular
+
+        .description
+            margin-bottom: 3.4rem
+
+        .download-button
+            @extend .custom-button
+
+.our-services
+    @extend .custom-container
+    @extend .centered-layout
+    @include CommonGrid(repeat(3, 1fr), inherit, 3rem)
+
+    margin-top: 2.4rem
+
+    @media (max-width : $tablets)
+        @include CommonGrid(1fr)
+
+        text-align: center
+
+.ad-wrapper
+    @include FlexBox(space-between)
+    @extend .custom-container
+
+    padding: 2.1rem
+    margin: 3rem auto
+
+    background: $blackColor
+    color: $whiteColor
+
+    @media (max-width: $tablets)
+        flex-direction: column
+        text-align: center
+
+    .ad-text
+        font-weight: $thin
+
+    .read-more-btn
+        @extend .custom-button
+
+        @media (max-width: $tablets)
+            margin-top: 2rem
+
+.cities-images-wrapper
+    @include CommonGrid(repeat(4, 1fr))
+    @extend .custom-container
+    @extend .centered-layout
+
+    margin: 5rem auto
+
+    @media (max-width: $tablets)
+        @include CommonGrid(repeat(2, 1fr))
+
+    @media (max-width: $mobilePhones)
+        @include CommonGrid(1fr)
+
+    .cities-title
+        grid-column: 1/-1
+
+        padding: 1rem 0
+
+        font-weight: $regular
+        color: $darkGrayColor
+
+    .section-description
+        grid-column: 1/-1
+
+        padding: 1rem 0
+
+        color: $darkGrayColor
+
+        .para-link
+            color: $orangeColor

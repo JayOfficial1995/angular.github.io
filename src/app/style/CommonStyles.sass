@@ -1,0 +1,38 @@
+@import './Theme'
+
+// =============================Mixins 
+
+@mixin CommonGrid($columns: 1fr 1fr, $rows: none, $gap: 1rem)
+    display: grid
+    grid-template-columns: $columns
+    grid-template-rows: $rows
+    grid-gap: $gap
+    align-items: flex-start
+
+@mixin FlexBox($justify: center, $align: center)
+    display: flex
+    justify-content: $justify
+    align-items: $align
+
+// =========================Extend Classes    
+
+.custom-container
+    max-width: 102.4rem
+    margin: 0 auto
+
+.centered-layout
+    padding-left: 1.5rem
+    padding-right: 1.5rem
+
+.custom-button
+    padding: 1.5rem 2rem
+    border: none
+    color: $whiteColor
+    text-transform: uppercase
+    background: $orangeColor
+    transition: .3s all linear
+    cursor: pointer
+    outline: none
+
+    &:hover
+        background: $darkOrangeColor

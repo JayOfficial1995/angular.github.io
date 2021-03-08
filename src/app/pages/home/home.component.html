@@ -1,0 +1,45 @@
+<section class="site-banner">
+  <article class="banner-details">
+    <h1 class="banner-title">Jahangir Khan First Angular Project</h1>
+    <p class="description">
+      This is the first angnular project developed by Jahangir khan for the
+      practice.
+    </p>
+    <button class="download-button">Download</button>
+  </article>
+</section>
+
+<section class="our-services">
+  <app-card
+    *ngFor="let services of servicesData"
+    [services]="services"
+  ></app-card>
+</section>
+
+<article class="ad-wrapper">
+  <h2 class="ad-text">
+    Lorem ipsum dolor sit <strong> amet consectetur</strong> adipisicing elit.
+  </h2>
+
+  <button class="read-more-btn">Read More</button>
+</article>
+
+<section class="cities-images-wrapper">
+  <h1 class="cities-title">Pakistan Most Beautifull Cities</h1>
+  <app-image-card
+    *ngFor="let city of citiesData"
+    [city]="city"
+  ></app-image-card>
+
+  <p class="section-description">
+    Lorem ipsum dolor sit amet
+    <a href="" class="para-link">consectetur</a> adipisicing elit. Maxime rerum
+    molestias saepe ab eaque <a href="" class="para-link">mollitia </a> ex culpa
+    fuga, quasi eligendi et vero excepturi quam
+    <a href="" class="para-link">inventore vitae, nam porro quos dolorem?</a>
+  </p>
+</section>
+
+<section class="about-wrapper">
+  <app-card [heading]="heading"></app-card>
+</section>

@@ -1,0 +1,44 @@
+@import "../.././app.component"
+
+.card-wrapper
+    position: relative
+    overflow: hidden
+    z-index: 1
+
+    cursor: pointer
+
+    &:hover
+        .card-details
+            bottom: 2%
+
+    .card-thumbnail-wrapper
+
+        .card-thumbnail
+            max-width: 100%
+
+    .card-details
+        position: absolute
+        bottom: -50%
+        left: 0
+
+        color: $whiteColor
+        background: rgba(0, 0, 0, 0.5)
+
+        padding: 1rem
+
+        transition: .3s all linear
+
+        @media (max-width: $tablets)
+            bottom: -18%
+
+        @media (max-width: $mobilePhones)
+            bottom: -16%
+
+        @media (max-width: $extraSmallDevices)
+            bottom: -33%
+
+        .heading
+            padding: 1rem 0
+
+        .description
+            font-size: $h4

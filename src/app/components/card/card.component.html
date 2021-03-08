@@ -1,0 +1,9 @@
+<h1 class="heading" *ngIf="services.heading; else heading">
+  {{ services.heading }}
+</h1>
+<ng-template #heading>
+  <h1 class="heading">{{ heading }}</h1>
+</ng-template>
+<p class="description">{{ services.description }}</p>
+
+<button class="card-button" *ngIf="services.buttonStatus">Learn More</button>

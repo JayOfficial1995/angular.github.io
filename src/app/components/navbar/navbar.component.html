@@ -1,0 +1,25 @@
+<header class="navbar-wrapper">
+  <nav class="navbar-container">
+    <a routerLink="/" class="site-logo-wrapper">
+      <img src="{{ siteLogo }}" alt="Site logo" class="site-logo" />
+    </a>
+
+    <section
+      (click)="toggleMenu()"
+      class="menubar-icon"
+      [class.toggle-active]="toggleBtn"
+    >
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </section>
+
+    <ul class="navbar-wrapper" [class.menu-active]="toggleBtn">
+      <li class="navbar-item" *ngFor="let item of navData">
+        <a routerLink="{{ item.path }}" class="navbar-item-link">{{
+          item.linkText
+        }}</a>
+      </li>
+    </ul>
+  </nav>
+</header>
